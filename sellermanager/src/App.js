@@ -17,8 +17,8 @@ export default function App() {
         <Route path="/NetworkManage" element={<Container3 />} />
         <Route path="/BlockchainManage" element={<Container4 />} />
         <Route path="/PaymentRecord" element={<Container5 />} />
-        <Route path="/WalletView" element={<Container6 />} />
-        <Route path="/MyInfo" element={<Container7 />} />
+        <Route path="/WalletView" element={<Container7 />} />
+        <Route path="/MyInfo" element={<Container6 />} />
         <Route path="/*" element={<Container8 />} />
       </Routes>
     </BrowserRouter>
