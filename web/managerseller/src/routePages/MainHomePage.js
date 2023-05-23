@@ -2,14 +2,17 @@ import classes from './Container.module.css';
 import Header from '../components/MainPage/Header/Header';
 import Category from '../components/MainPage/Category/Category';
 import Footer from '../components/MainPage/Footer/Footer';
-import EmptyPage from '../components/MainPage/ContainerComponents/EmptyPage/EmptyPage';
+import Main from '../components/MainPage/ContainerComponents/Main/Main';
 
-const Container8 = () => {
+const MainHomePage = () => {
   return (
     <div className={classes.container}>
-      <EmptyPage />
+      <Header />
+      <Category />
+      <Main />
+      <Footer />
     </div>
   );
 };
 
-export default Container8;
+export default MainHomePage;

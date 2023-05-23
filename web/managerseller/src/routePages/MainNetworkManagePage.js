@@ -2,17 +2,17 @@ import classes from './Container.module.css';
 import Header from '../components/MainPage/Header/Header';
 import Category from '../components/MainPage/Category/Category';
 import Footer from '../components/MainPage/Footer/Footer';
-import WalletManage from '../components/MainPage/ContainerComponents/WalletManager/WalletManage/WalletManage';
+import NetworkManage from '../components/MainPage/ContainerComponents/WalletManager/NetworkManage/NetworkManage';
 
-const Container2 = () => {
+const MainNetworkManagePage = () => {
   return (
     <div className={classes.container}>
       <Header />
       <Category />
-      <WalletManage />
+      <NetworkManage />
       <Footer />
     </div>
   );
 };
 
-export default Container2;
+export default MainNetworkManagePage;
