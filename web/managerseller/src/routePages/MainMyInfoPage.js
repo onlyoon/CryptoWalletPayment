@@ -4,7 +4,7 @@ import Category from '../components/MainPage/Category/Category';
 import Footer from '../components/MainPage/Footer/Footer';
 import MyInfo from '../components/MainPage/ContainerComponents/BlockchainManager/MyInfo/MyInfo';
 
-const Container6 = () => {
+const MainMyInfoPage = () => {
   return (
     <div className={classes.container}>
       <Header />
@@ -15,4 +15,4 @@ const Container6 = () => {
   );
 };
 
-export default Container6;
+export default MainMyInfoPage;

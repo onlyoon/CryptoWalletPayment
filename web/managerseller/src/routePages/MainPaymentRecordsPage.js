@@ -4,7 +4,7 @@ import Category from '../components/MainPage/Category/Category';
 import Footer from '../components/MainPage/Footer/Footer';
 import PaymentRecords from '../components/MainPage/ContainerComponents/NetworkManager/PaymentRecord/PaymentRecords';
 
-const Container5 = () => {
+const MainPaymentRecordsPage = () => {
   return (
     <div className={classes.container}>
       <Header />
@@ -15,4 +15,4 @@ const Container5 = () => {
   );
 };
 
-export default Container5;
+export default MainPaymentRecordsPage;

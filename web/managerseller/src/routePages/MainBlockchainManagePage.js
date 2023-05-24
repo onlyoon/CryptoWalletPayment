@@ -4,7 +4,7 @@ import Category from '../components/MainPage/Category/Category';
 import Footer from '../components/MainPage/Footer/Footer';
 import BlockchainManage from '../components/MainPage/ContainerComponents/WalletManager/BlockchainManage/BlockchainManage';
 
-const Container4 = () => {
+const MainBlockchainManagePage = () => {
   return (
     <div className={classes.container}>
       <Header />
@@ -15,4 +15,4 @@ const Container4 = () => {
   );
 };
 
-export default Container4;
+export default MainBlockchainManagePage;

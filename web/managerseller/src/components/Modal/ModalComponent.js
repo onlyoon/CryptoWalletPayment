@@ -1,33 +1,33 @@
 import Modal from './Modal';
 import classes from './ModalComponent.module.css';
 
+const asset = (
+  <ul className={classes.list}>
+    {[
+      { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
+      { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
+      { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
+      { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
+      { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
+      { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
+      { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
+      { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
+      { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
+      { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
+      { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
+      { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
+    ].map((coin) => (
+      <>
+        <li className={classes.coinname}>
+          {coin.name} : {coin.amount}
+        </li>
+      </>
+    ))}
+  </ul>
+);
+
 const ModalComponent = (props) => {
   const propsname = 'METAMASK';
-
-  const asset = (
-    <ul className={classes.list}>
-      {[
-        { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
-        { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
-        { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
-        { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
-        { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
-        { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
-        { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
-        { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
-        { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
-        { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
-        { id: 'BTC', name: 'BTC', amount: 0.2, krw: 23000 },
-        { id: 'ETH', name: 'ETH', amount: 1, krw: 3000000 },
-      ].map((coin) => (
-        <>
-          <li className={classes.coinname}>
-            {coin.name} : {coin.amount}
-          </li>
-        </>
-      ))}
-    </ul>
-  );
 
   return (
     <Modal>
@@ -59,7 +59,9 @@ const ModalComponent = (props) => {
         </div>
         <div className={classes.buttons}>
           <button className={classes.completebutton}>등록</button>
-          <button className={classes.backbutton}>돌아가기</button>
+          <button onClick={props.onHideModal} className={classes.backbutton}>
+            돌아가기
+          </button>
         </div>
       </div>
     </Modal>
