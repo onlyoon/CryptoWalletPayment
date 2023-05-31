@@ -1,12 +1,12 @@
-import MainHomePage from './routePages/MainHomePage';
-import MainWalletManagePage from './routePages/MainWalletManagePage';
-import MainNetworkManagePage from './routePages/MainNetworkManagePage';
-import MainBlockchainManagePage from './routePages/MainBlockchainManagePage';
-import MainPaymentRecordsPage from './routePages/MainPaymentRecordsPage';
-import MainMyInfoPage from './routePages/MainMyInfoPage';
-import MainWalletViewPage from './routePages/MainWalletViewPage';
-import MainEmptyPage from './routePages/MainEmptyPage';
-import SignInFormPage from './routePages/SignInFormPage';
+import MainHomePage from './pages/MainHomePage';
+import MainWalletManagePage from './pages/MainWalletManagePage';
+import MainNetworkManagePage from './pages/MainNetworkManagePage';
+import MainBlockchainManagePage from './pages/MainBlockchainManagePage';
+import MainPaymentRecordsPage from './pages/MainPaymentRecordsPage';
+import MainMyInfoPage from './pages/MainMyInfoPage';
+import MainWalletViewPage from './pages/MainWalletViewPage';
+import MainEmptyPage from './pages/MainEmptyPage';
+import SignInFormPage from './pages/SignInFormPage';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

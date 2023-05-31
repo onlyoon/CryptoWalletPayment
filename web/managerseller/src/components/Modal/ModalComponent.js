@@ -27,8 +27,8 @@ const asset = (
 );
 
 const ModalComponent = (props) => {
-  const propsname = 'METAMASK';
-
+  const propsname = props.WalletName;
+  const propsImageUrl = props.WalletImageUrl;
   return (
     <Modal>
       <div className={classes.wrap}>
@@ -36,7 +36,7 @@ const ModalComponent = (props) => {
         <div className={classes.wallet}>
           <img
             className={classes.walletimg}
-            src="https://metamask.io/icons/icon-48x48.png?v=48400a28770e10dd52a8c0e539aeb282"
+            src={propsImageUrl}
             alt="이미지 파일"
           />
           <h2 className={classes.walletname}>{propsname}</h2>

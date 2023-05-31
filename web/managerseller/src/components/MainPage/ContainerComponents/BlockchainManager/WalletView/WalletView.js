@@ -11,7 +11,10 @@ const WalletView = (props) => {
         <div className={classes.walletview_text}>지갑조회/등록</div>
         <div className={classes.walleview_components_wrap}>
           <div className={classes.components}>
-            <Wallet showModal={props.onShowModal} />
+            <Wallet
+              showModal={props.onShowModal}
+              walletImage={props.walletImage}
+            />
           </div>
         </div>
       </div>

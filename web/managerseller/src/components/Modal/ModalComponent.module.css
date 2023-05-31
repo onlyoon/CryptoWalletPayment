@@ -28,6 +28,7 @@
 .walletimg {
   width : 50px;
   height: 50px;
+  border-radius: 15px;
 }
 .walletname {
   display: flex;
@@ -80,6 +81,7 @@
   width: 60px;
   border-radius: 15px;
   background-color: #f7a701;
+  color: white;
 }
 .buttonaddress:hover {
   box-shadow: 0 0 11px rgba(0, 0, 0, 0.5)  ; 
