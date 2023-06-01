@@ -8,7 +8,7 @@ const SignIn = () => {
   const [savedSignInId, setSavedSignInId] = useState('');
   const [savedSignInPw, setSavedSignInPw] = useState('');
 
-  let sessionStorage = window.sessionStorage;
+  // let localStorage = window.localStorage;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,6 +16,17 @@ const SignIn = () => {
     const email = formData.get('email');
     const pass = formData.get('password');
     console.log(email, pass);
+  };
+
+  const signInButtonClickHandler = () => {
+    localStorage.setItem('signInId', signInId);
+    localStorage.setItem('signInPw', signInPw);
+
+    setSavedSignInId(localStorage.getItem('signInId'));
+    setSavedSignInPw(localStorage.getItem('signInPw'));
+    console.log('singed one : ' + signInId, signInPw);
+    console.log('saved one : ' + savedSignInId, savedSignInPw);
+    console.log(JSON.stringify(localStorage));
   };
 
   return (
@@ -47,21 +58,12 @@ const SignIn = () => {
             }}
           ></input>
           <div className={classes.signbuttons}>
-            <Link to={'/signin'} className={classes.signinbutton}>
+            <Link to={'#'} className={classes.signinbutton}>
               <button
                 type="submit"
                 id="signinbutton"
                 className={classes.signinbutton}
-                onClick={() => {
-                  sessionStorage.setItem('signInId', signInId);
-                  sessionStorage.setItem('signInPw', signInPw);
-
-                  setSavedSignInId(sessionStorage.getItem('signInId'));
-                  setSavedSignInPw(sessionStorage.getItem('signInPw'));
-                  console.log(signInId, signInPw);
-                  console.log(savedSignInId, savedSignInPw);
-                  console.log(JSON.stringify(sessionStorage));
-                }}
+                onClick={signInButtonClickHandler}
               >
                 로그인
               </button>
