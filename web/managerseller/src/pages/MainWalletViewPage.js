@@ -4,12 +4,17 @@ import Category from '../components/MainPage/Category/Category';
 import Footer from '../components/MainPage/Footer/Footer';
 import WalletView from '../components/MainPage/ContainerComponents/BlockchainManager/WalletView/WalletView';
 import ModalComponent from '../components/Modal/ModalComponent';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const MainWalletViewPage = ({ walletImage }) => {
+const MainWalletViewPage = ({ isValidLogin, walletImage }) => {
   const [modalIsShown, setModalIsShown] = useState(false);
   const [selectedWalletName, setSelectedWalletName] = useState('');
   const [selectedWalletImgUrl, setSelectedWalletImgUrl] = useState();
+
+  useEffect(() => {
+    const curAccessToken = localStorage.getItem('accessToken');
+    isValidLogin(curAccessToken);
+  }, []);
 
   const showModalHandler = (walletName, walletImageUrl) => {
     setSelectedWalletName(walletName);

@@ -44,7 +44,7 @@ const SignIn = ({ handleSetAccessToken }) => {
           const curAccessToken = localStorage.getItem('accessToken');
           if (curAccessToken === accessToken) {
             handleSetAccessToken(curAccessToken);
-            window.location.href = '/';
+            window.location.href = '/main';
           }
         } else {
           // 로그인 실패 처리

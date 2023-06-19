@@ -21,16 +21,10 @@ export default function App() {
   };
 
   const isValidToken = (curAccessToken) => {
-    console.log('accessToken:', accessToken);
-    console.log('curAccessToken:', curAccessToken);
-
-    if (accessToken === curAccessToken) {
-      alert('유효한 접근입니다.');
-      console.log(accessToken, curAccessToken);
-    } else {
+    if (!(accessToken === curAccessToken)) {
       alert('유효하지 않은 접근입니다.', accessToken);
-      window.location.href = '/login';
-    }
+      window.location.href = '/';
+    } else console.log('유효한 접근입니다.');
   };
 
   const walletSourceList = [
@@ -76,31 +70,53 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="login"
+            path="/"
             element={
               <SignInFormPage handleSetAccessToken={handleSetAccessToken} />
             }
           />
           <Route
-            path="/"
+            path="/main"
             element={<MainHomePage isValidLogin={isValidToken} />}
           />
           <Route
             path="/WalletManage"
-            element={<MainWalletManagePage alletImage={walletSourceList} />}
+            element={
+              <MainWalletManagePage
+                isValidLogin={isValidToken}
+                walletImage={walletSourceList}
+              />
+            }
           />
-          <Route path="/NetworkManage" element={<MainNetworkManagePage />} />
+          <Route
+            path="/NetworkManage"
+            element={<MainNetworkManagePage isValidLogin={isValidToken} />}
+          />
           <Route
             path="/BlockchainManage"
-            element={<MainBlockchainManagePage />}
+            element={<MainBlockchainManagePage isValidLogin={isValidToken} />}
           />
-          <Route path="/PaymentRecord" element={<MainPaymentRecordsPage />} />
+          <Route
+            path="/PaymentRecord"
+            element={<MainPaymentRecordsPage isValidLogin={isValidToken} />}
+          />
           <Route
             path="/WalletView"
-            element={<MainWalletViewPage walletImage={walletSourceList} />}
+            element={
+              <MainWalletViewPage
+                isValidLogin={isValidToken}
+                walletImage={walletSourceList}
+              />
+            }
           />
-          <Route path="/MyInfo" element={<MainMyInfoPage />} />
-          <Route path="*" element={<MainEmptyPage />} />
+          <Route
+            path="/MyInfo"
+            element={<MainMyInfoPage isValidLogin={isValidToken} />}
+          />
+          <Route
+            path="*"
+            element={<MainEmptyPage isValidLogin={isValidToken} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
