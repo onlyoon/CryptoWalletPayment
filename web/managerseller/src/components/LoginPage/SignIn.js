@@ -2,6 +2,7 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import classes from './SignIn.module.css';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 // import { withRouter } from 'react-router-dom';
 
 const SignIn = ({ handleSetAccessToken }) => {
@@ -66,23 +67,24 @@ const SignIn = ({ handleSetAccessToken }) => {
       <div className={classes.wrap}>
         <h1>Seller Manager</h1>
         <h1>Login</h1>
+        <br />
         <form id="signinForm" className={classes.form} onSubmit={handleSubmit}>
           <input
             className={classes.inputaddress}
             type={'text'}
             id="username"
-            placeholder="Username"
+            placeholder="아이디"
             required
-            autoComplete="email"
+            autoComplete="on"
             onChange={handleUsernameChange}
           ></input>
           <input
             className={classes.inputaddress}
             type={'password'}
             id="password"
-            placeholder="Password"
+            placeholder="비밀번호"
             required
-            autoComplete="current-password"
+            autoComplete="off"
             onChange={handlePasswordChange}
           ></input>
           <div className={classes.signbuttons}>
@@ -93,23 +95,21 @@ const SignIn = ({ handleSetAccessToken }) => {
             >
               로그인
             </button>
-            <button
-              type="submit"
-              id="signupbutton"
-              className={classes.signinbutton}
-            >
-              회원가입
-            </button>
-            <div className={classes.signInInvalid}>
-              {signInInvalid && (
-                <>
-                  <p> 아이디 또는 비밀번호를 잘못 입력했습니다.</p>
-                  <p> 입력하신 내용을 다시 확인해주세요.</p>
-                </>
-              )}
-            </div>
           </div>
         </form>
+        <Link to={'/signup'} className={classes.signupbutton_wrap}>
+          <button id="signupbutton" className={classes.signupbutton}>
+            회원가입
+          </button>
+        </Link>
+        <div className={classes.signInInvalid}>
+          {signInInvalid && (
+            <>
+              <p> 아이디 또는 비밀번호를 잘못 입력했습니다.</p>
+              <p> 입력하신 내용을 다시 확인해주세요.</p>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
